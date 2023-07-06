@@ -1,44 +1,38 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* font-family: 'Palanquin', sans-serif;
+:root {
+  --bg-header: #8e9aaf;
+  --bg-main: #eff1ff;
+  --bg-h1: #cbc0d3;
+  --bg-h2: #feeafa;
 
-font-family: 'Staatliches', cursive; */
+  --fc-h1: #ffffff;
+  --fc-h2: #4a4e69;
+  --fc-p: #23053a;
 
-:root{
-  --bg-header: #8E9AAF;
-  --bg-main: #EFF1FF;
-  --bg-h1: #CBC0D3;
-  --bg-h2: #FEEAFA;
-  
-
-  --fc-h1:#FFFFFF;
-  --fc-h2:#4A4E69;
-  --fc-p:#23053A;
-  
-  --ff-h:'Staatliches', cursive; 
-  --ff-p: 'Palanquin', sans-serif;
-  --ff-footer: 'Open sans', cursive;
+  --ff-h: "Staatliches", cursive;
+  --ff-p: "Palanquin", sans-serif;
+  --ff-footer: "Open sans", cursive;
 
   font-size: 62.5%;
 }
 
-
-body{
+body {
   margin: 0 auto;
   width: 100%;
   text-align: center;
   position: relative;
-  
-  /* só pro fundo não ficar branco */
+
+  /* only so the background isn't white */
   background-color: #8a8a91;
 }
 
-header::before{
-  content: '';
+header::before {
+  content: "";
   background-color: var(--bg-header);
   width: 100%;
   position: absolute;
@@ -46,78 +40,74 @@ header::before{
   z-index: -1;
   top: 0;
   left: 0;
-  
 }
 
-header img{
+header img {
   margin: 3.2rem auto;
 }
 
-h1, h2{
+h1,
+h2 {
   font-family: var(--ff-h);
   line-height: 3.4rem;
   font-weight: 400;
 }
 
-h1{
+h1 {
   background-color: var(--bg-h1);
   color: var(--fc-h1);
-  
+
   font-size: 4rem;
   padding: 0.8rem 0 0.7rem;
   margin-bottom: 2.9rem;
   letter-spacing: 0.05em;
 }
 
-/* CLAMP FOI UTILIZADO PARA O SITE CABER EM APARELHOS MOBILE SMALL (320px de largura) */
-.content-wrapper{
+/*CLAMP UTILIZED SO THE SITE CAN FIT SMALL MOBILE DEVICES (width->320px)*/
+.content-wrapper {
   background-color: var(--bg-main);
-  padding: 0 clamp(1rem,2rem + 1vw,3.2rem) 6rem;
+  padding: 0 clamp(1rem, 2rem + 1vw, 3.2rem) 6rem;
   width: 100%;
-  
 }
 
-main p{
+main p {
   padding-top: 1.4rem;
-  
+
   margin: 0 auto 5.6rem;
-  
+
   max-width: 30.5rem;
-  
+
   font-family: var(--ff-p);
   font-size: 1.35rem;
-  
+
   line-height: 1.5rem;
-  
+
   color: var(--fc-p);
 }
 
-.card{
-
+.card {
   position: relative;
 
   margin: 0 auto;
 
-  width: clamp(10rem, 10rem + 45vw ,32rem);
+  width: clamp(10rem, 10rem + 45vw, 32rem);
 
   border-radius: 20px;
 }
 
-@media (max-width:1199px){
-
-  .card + .card{
+@media (max-width: 1199px) {
+  .card + .card {
     margin-top: 3.6rem;
   }
 }
 
-h2{
+h2 {
   position: absolute;
   top: 1.6rem;
   right: 1.6rem;
   z-index: 1;
 
   font-size: 2rem;
-  
 
   background-color: var(--bg-h2);
   color: var(--fc-h2);
@@ -126,81 +116,80 @@ h2{
   height: 3.5rem;
 
   border-radius: 20px;
-
 }
 
-.card h2{
+.card h2 {
   animation: topdown 700ms 300ms backwards;
 }
 
-.card img{
-  width: clamp(10rem, 10rem + 40vw ,32rem);
+.card img {
+  width: clamp(10rem, 10rem + 40vw, 32rem);
   animation: downtop 700ms;
 }
 
-footer{
+footer {
   display: none;
 }
 
-header p{
+header p {
   display: none;
 }
 
-main div:nth-child(5) , main div:nth-child(6){
+main div:nth-child(5),
+main div:nth-child(6) {
   display: none;
 }
 
-
-
-@media (min-width:1200px){
-
-  :root{
-    --ff-p:'Roboto', sans-serif;
+@media (min-width: 1200px) {
+  :root {
+    --ff-p: "Roboto", sans-serif;
   }
 
-  body{
+  body {
     display: flex;
     height: 1080px;
   }
 
-  .content-wrapper{
-    padding:0 0 4.6rem 0;
+  .content-wrapper {
+    padding: 0 0 4.6rem 0;
   }
 
-  main div:nth-child(5), main div:nth-child(6){
+  main div:nth-child(5),
+  main div:nth-child(6) {
     display: block;
   }
 
-  h1{
+  h1 {
     font-size: 4.8rem;
     height: 7rem;
     width: 37.7rem;
     padding-top: 2rem;
   }
 
-  main p{
+  main p {
     display: none;
   }
 
-  header p{
+  header p {
     display: block;
     font-family: var(--ff-p);
     font-size: 1.6rem;
     line-height: 2rem;
-    color: #FFFFFF;
+    color: #ffffff;
     margin: 3.2rem 4.8rem 12.5rem 5.4rem;
   }
 
-  header::before , header{
+  header::before,
+  header {
     height: 100%;
     width: 37.7rem;
   }
 
-  .card h2{
+  .card h2 {
     display: none;
   }
 
-  main{
+  main {
     padding: 6.4rem 8.1rem 4.5rem 9.8rem;
 
     width: 100%;
@@ -209,70 +198,67 @@ main div:nth-child(5) , main div:nth-child(6){
     gap: 3.2rem;
 
     grid-template-rows: 25rem 16.8rem 1fr;
-    grid-template-columns: 1fr 1fr 1fr ;
-    grid-template-areas: 
-    "B C F"
-    "A C E"
-    "A D E";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "B C F"
+      "A C E"
+      "A D E";
   }
 
-  main div:nth-child(1){
+  main div:nth-child(1) {
     grid-area: A;
   }
-  main div:nth-child(2){
+  main div:nth-child(2) {
     grid-area: B;
   }
-  main div:nth-child(3){
+  main div:nth-child(3) {
     grid-area: C;
   }
-  main div:nth-child(4){
+  main div:nth-child(4) {
     grid-area: D;
   }
 
-  main div:nth-child(5){
+  main div:nth-child(5) {
     grid-area: E;
   }
 
-  main div:nth-child(6){
+  main div:nth-child(6) {
     grid-area: F;
   }
 
-  #card3{
-    grid-row: 3 /span 1;
+  #card3 {
+    grid-row: 3 / span 1;
   }
-  
 
-  footer{
-    font-family:var(--ff-footer);
+  footer {
+    font-family: var(--ff-footer);
     display: block;
     font-size: 1.4rem;
     line-height: 2.8rem;
     color: var(--fc-h2);
   }
-
 }
 
-@keyframes downtop{
-  0%{
+@keyframes downtop {
+  0% {
     opacity: 0;
     transform: translateY(15px);
   }
 
-  100%{
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes topdown{
-  0%{
+@keyframes topdown {
+  0% {
     opacity: 0;
     transform: translateY(-15px);
   }
 
-  100%{
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
-
 }
